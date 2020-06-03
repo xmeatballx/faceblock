@@ -18,3 +18,5 @@ and visit localhost:3000 in your browser.
 Raw Image | Blocked Image
 --------- | -------------
 ![image raw](https://github.com/xmeatballx/faceblock/blob/master/images/imageraw.png) | ![image blocked](https://github.com/xmeatballx/faceblock/blob/master/images/imageblocked.png)
+
+best/quickest results with images less than 1000x1000px
