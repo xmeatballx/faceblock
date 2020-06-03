@@ -7,6 +7,7 @@ var boxPos;
 var boxDim;
 var boxes = [];
 var uploaded;
+var interval = 1000
 
 function setup() {
 	createCanvas(0, 0);
@@ -16,7 +17,8 @@ function setup() {
 	imghtml = document.getElementById("img");
 	submit = document.getElementById("submit");
 	submit.addEventListener("click", assignSrc);
-	uploaded = false;
+	uploaded = true;
+	detect();
 }
 
 function assignSrc() {
@@ -24,16 +26,19 @@ function assignSrc() {
 	imghtml.src = "image.jpg";
 	imgjs = loadImage("image.jpg", () => {
 		uploaded = true;
+		detect();
 	});
 }
 
 function draw() {
+	if (boxes.length == 0) interval=1000;
+	else interval=0;
 	//background(255);
 	resizeCanvas(imgjs.width, imgjs.height);
 	image(imgjs, 0, 0);
 	for (var i = 0; i < boxes.length; i++) {
 		boxes[i].display();
-		//console.log(boxes[i].x);
+		console.log(uploaded);
 	}
 }
 
@@ -54,12 +59,12 @@ function detect() {
 				boxes[i] = new Box(boxPos.x, boxPos.y, boxDim.x, boxDim.y);
 			}
 		} else {
-			boxes.length = 0;
 			uploaded = false;
+			boxes.length = 0;
 		}
 		//drawBox(boxPos.x, boxPos.y, boxDim.x, boxDim.y)
-		//console.log(boxes.length)
-	}, 1000);
+		// console.log(boxes.length)
+	}, interval);
 }
 
 class Box {
