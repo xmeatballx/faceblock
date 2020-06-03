@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="face-api.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+	<script src="sketch.js"></script>
+</head>
+<body>
+<form id = 'upload' action="/" method="post" enctype="multipart/form-data">
+    <div class = "upload">
+        <input type="file" accept="image/*" name="photo" >
+        <input type="submit" value="upload" id='submit'>
+    </div>
+</form>
+<img src='crowdtest.png' id='img' style="display:none">
+</body>
+</html>
