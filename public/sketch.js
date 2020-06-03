@@ -28,11 +28,12 @@ function assignSrc() {
 }
 
 function draw() {
-	background(255);
+	//background(255);
 	resizeCanvas(imgjs.width, imgjs.height);
 	image(imgjs, 0, 0);
 	for (var i = 0; i < boxes.length; i++) {
-		if (boxes[i]) boxes[i].display();
+		boxes[i].display();
+		console.log(boxes[i].x);
 	}
 }
 
@@ -57,8 +58,8 @@ function detect() {
 			uploaded = false;
 		}
 		//drawBox(boxPos.x, boxPos.y, boxDim.x, boxDim.y)
-		//console.log(detections)
-	}, 100);
+		console.log(boxes.length)
+	}, 1000);
 }
 
 class Box {
