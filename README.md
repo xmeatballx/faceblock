@@ -10,7 +10,7 @@ Then run these commands in a terminal/command prompt
 git clone https://github.com/xmeatballx/faceblock.git
 cd faceblock
 npm install
-node index.js
+npm start
 ```
 and visit localhost:3000 in your browser.
 
