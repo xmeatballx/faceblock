@@ -12,7 +12,7 @@ function setup() {
 	createCanvas(0, 0);
 	boxDim = createVector(0, 0);
 	boxPos = createVector(0, 0);
-	imgjs = loadImage("image.jpg");
+	imgjs = loadImage("crowd2.jpg");
 	imghtml = document.getElementById("img");
 	submit = document.getElementById("submit");
 	submit.addEventListener("click", assignSrc);
