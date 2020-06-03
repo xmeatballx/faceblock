@@ -14,7 +14,7 @@ node index.js
 ```
 and visit localhost:3000 in your browser.
 
-*raw image* 
+
 Raw Image | Blocked Image
 --------- | -------------
 ![image raw](https://github.com/xmeatballx/faceblock/blob/master/images/imageraw.png) | ![image blocked](https://github.com/xmeatballx/faceblock/blob/master/images/imageblocked.png)
