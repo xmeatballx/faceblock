@@ -33,7 +33,7 @@ function draw() {
 	image(imgjs, 0, 0);
 	for (var i = 0; i < boxes.length; i++) {
 		boxes[i].display();
-		console.log(boxes[i].x);
+		//console.log(boxes[i].x);
 	}
 }
 
@@ -58,7 +58,7 @@ function detect() {
 			uploaded = false;
 		}
 		//drawBox(boxPos.x, boxPos.y, boxDim.x, boxDim.y)
-		console.log(boxes.length)
+		//console.log(boxes.length)
 	}, 1000);
 }
 
