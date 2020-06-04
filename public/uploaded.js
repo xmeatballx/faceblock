@@ -1,3 +1,4 @@
+var socket = io();
 var imgjs;
 var imghtml;
 var detections;
@@ -6,15 +7,19 @@ var slider;
 var boxPos;
 var boxDim;
 var boxes = [];
+var imageLoaded;
 
 function setup() {
+	imageLoaded = false;
+	socket.emit("image state", imageLoaded);
 	createCanvas(0, 0);
 	boxDim = createVector(0, 0);
 	boxPos = createVector(0, 0);
 	imgjs = loadImage("image.jpg", () => {
+		imageLoaded = true;
+		socket.emit("image state", imageLoaded);
 		boxes.length = 0;
 		awaitDetection = setInterval(detect, 1000);
-
 	});
 	imghtml = document.getElementById("img");
 }
@@ -44,7 +49,6 @@ async function detect() {
 			boxDim.x = detections[i].box.width;
 			boxDim.y = detections[i].box.height;
 			boxes[i] = new Box(boxPos.x, boxPos.y, boxDim.x, boxDim.y);
-			console.log(boxes[i].x)
 		}
 	}
 }
