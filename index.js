@@ -3,8 +3,6 @@ const app = express();
 app.use(express.static("public"));
 app.listen(process.env.PORT || 3000);
 
-const cors = require('cors');
-//app.use(cors);
 const multer = require("multer");
 const path = require("path");
 var storage = multer.diskStorage({
