@@ -1,6 +1,7 @@
 var imgjs;
 var imghtml;
 var detections;
+var submit;
 var slider;
 var boxPos;
 var boxDim;
@@ -10,7 +11,11 @@ function setup() {
 	createCanvas(0, 0);
 	boxDim = createVector(0, 0);
 	boxPos = createVector(0, 0);
-	imgjs = loadImage("crowd2.jpg");
+	imgjs = loadImage("image.jpg", () => {
+		boxes.length = 0;
+		awaitDetection = setInterval(detect, 1000);
+
+	});
 	imghtml = document.getElementById("img");
 }
 
@@ -20,12 +25,10 @@ function draw() {
 	if (boxes.length > 0) clearInterval(awaitDetection);
 	for (var i = 0; i < boxes.length; i++) {
 		boxes[i].display();
-		//console.log(boxes.length);
 	}
 }
 
 Promise.all([faceapi.nets.ssdMobilenetv1.loadFromUri("/models")]).then(detect);
-
 
 var awaitDetection = setInterval(detect, 1000);
 
@@ -41,9 +44,9 @@ async function detect() {
 			boxDim.x = detections[i].box.width;
 			boxDim.y = detections[i].box.height;
 			boxes[i] = new Box(boxPos.x, boxPos.y, boxDim.x, boxDim.y);
+			console.log(boxes[i].x)
 		}
 	}
-
 }
 
 
