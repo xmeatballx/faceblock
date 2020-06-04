@@ -1,7 +1,8 @@
 # Faceblock
 ## Use face detection AI to cover all faces in a photo with a black square
+https://facebloock.herokuapp.com/
 
-#### setup
+### setup
 make sure you have node and npm installed
 https://nodejs.org/en/download/
 
