@@ -2,7 +2,9 @@
 ## Use face detection AI to cover all faces in a photo with a black square
 https://facebloock.herokuapp.com/
 
-### setup
+### Heroku is not always reliable or safe so...
+## To setup and run locally on your device follow this guide:
+
 make sure you have node and npm installed
 https://nodejs.org/en/download/
 
