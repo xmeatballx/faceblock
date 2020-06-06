@@ -6,7 +6,7 @@ Raw Image | Blocked Image
 ![image raw](https://github.com/xmeatballx/faceblock/blob/master/images/imageraw.png) | ![image blocked](https://github.com/xmeatballx/faceblock/blob/master/images/imageblocked.png)
 
 ### The Heroku app is purely for demonstration purposes. Please do not upload any sensitive images
-## Instead, follow this guide to setup and run locally on your computer follow this guide:
+## Instead, follow this guide to setup and run locally on your computer:
 
 make sure you have node and npm installed
 https://nodejs.org/en/download/
